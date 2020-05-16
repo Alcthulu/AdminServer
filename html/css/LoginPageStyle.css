@@ -1,0 +1,68 @@
+body{
+  margin-top: 3%;
+  margin-left: 3%;
+  background-image: url("../images/Logo_USAL_Color_2012.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#cancel{
+  padding: 6px;
+  background: #ddd;
+  margin-top: 0%;
+  margin-left: 0%;
+  text-decoration: none;
+  border-bottom: black;
+}
+
+#cancel:hover{
+  background: #ccc;
+}
+
+.fromularioLogin{
+  background: rgba(261,262,263,0.0);
+  width: 25%;
+  margin: 0% 37.5% 0% 37.5%;
+  margin-left: 0%;
+  padding: 1%;
+}
+
+label{
+  color: black;
+  margin-left: 5%;
+}
+
+input[type=text], input[type=password] {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 5%;
+  display: inline-block;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+  
+}
+
+button {
+  background-color: #a80038;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 30% 8px 30%;
+  border: none;
+  cursor: pointer;
+  width: 35%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.container {
+  padding: 16px;
+}
+
+#SignUpLink{
+  margin-left: auto;
+  margin-right: auto;
+}
+
