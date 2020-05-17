@@ -26,14 +26,11 @@ $surname = $q->param('surname');
 $Email = $q->param('Email');
 $mail = $q->param('mail');
 
-my ($mail,$error)=Email::Send::SMTP::Gmail->new( -smtp=>'smtp.gmail.com',
-                                                 -login=>'AdAdRoLu@gmail.com',
-                                                 -pass=>'Admin1212');
+my ($mail,$error)=Email::Send::SMTP::Gmail->new( -smtp=>'smtp.gmail.com',-login=>'AdAdRoLu@gmail.com',-pass=>'Admin1212');
 
 print "session error: $error" unless ($email!=-1);
  
-$mail->send(-to=>'hugo1603@usal.es', -subject=>'Intento de conexion', -body=>'Just testing it',
-            -attachments=>'full_path_to_file');
+$mail->send(-to=>'hugo1603@usal.es', -subject=>'Intento de conexion', -body=>'Just testing it');
  
 $mail->bye;
 
