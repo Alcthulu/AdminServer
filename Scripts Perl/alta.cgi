@@ -24,7 +24,7 @@ $pass2 = $q->param('pass2');
 $name = $q->param('name');
 $surname = $q->param('surname');
 $Email = $q->param('Email');
-$mail = $q->param('mail');
+$correopostal = $q->param('correopostal');
 
 my ($mail,$error)=Email::Send::SMTP::Gmail->new( -smtp=>'smtp.gmail.com',-login=>'AdAdRoLu@gmail.com',-pass=>'Admin1212');
 
