@@ -28,7 +28,7 @@ $correopostal = $q->param('correopostal');
 
 my ($mail,$error)=Email::Send::SMTP::Gmail->new( -smtp=>'smtp.gmail.com',-login=>'AdAdRoLu@gmail.com',-pass=>'Admin1212');
 
-print "session error: $error" unless ($email!=-1);
+print "session error: $error" unless ($mail!=-1);
  
 $mail->send(-to=>'hugo1603@usal.es', -subject=>'Intento de conexion', -body=>'Just testing it');
  
