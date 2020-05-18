@@ -13,7 +13,7 @@ my $pass2;
 my $name;
 my $surname;
 my $Email;
-my $mail;
+my $correopostal;
 
 
 print $q->header();
