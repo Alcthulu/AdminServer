@@ -1,0 +1,41 @@
+<!DOCTYPE php>
+<html>
+	<head>
+		<meta charset="UTF-8">		
+		<title>Formulario de modificaciones</title>
+		<link rel="stylesheet" href="css/SignUpStyle.css">		
+	</head>
+	<body>
+		<form action="/modificar.php" method="POST">
+
+		    <label for="user"><b>Confirma tu nombre de usuario</b></label>
+		    <input type="text" placeholder="Nombre de usuario" name="userAnt" id="userAnt" required>
+
+			<label for="pass"><b>Confirma tu Contraseña</b></label>
+		    <input type="password" placeholder="Contraseña" name="passAnt" id="passAnt" required> 
+
+		    <br><br><br><br>
+			Rellena solo los campos de los datos que quieras modificar:
+			<br><br>
+
+    		<label for="user"><b>Nuevo nombre de usuario</b></label>
+    		<input type="text" placeholder="Nombre de usuario" name="user" id="user" required>
+
+  			<label for="pass"><b>Nueva contraseña</b></label>
+    		<input type="password" placeholder="Contraseña" name="pass" id="pass" required>
+
+    		 <label for="pass2"><b>Repita la nueva contraseña</b></label>
+    		<input type="password" placeholder="Contraseña" name="pass2" id="pass2" required>
+
+    		<label for="Email"><b>Nuevo correo electrónico</b></label>
+    		<input type="email" placeholder="Correo electrónico" name="Email" id="Email" required>
+
+			<label for="mail"><b>Nuevo correo postal</b></label>
+    		<input type="text" placeholder="Correo postal" name="correopostal" id="correopostal" required>
+
+			<button type="submit">Enviar</button>
+			<br><a href="/bienvenido.php">Volver</a>
+
+		</form>
+	</body>
+</html>
