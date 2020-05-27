@@ -1,0 +1,38 @@
+<!DOCTYPE php>
+<html>
+	<head>
+		<meta charset="UTF-8">		
+		<title>Formulario de modificaciones</title>
+		<link rel="stylesheet" href="css/ModDatStyle.css">		
+	</head>
+	<body>
+		<form class="formularioModDat" action="/modificar.php" method="POST">
+
+		    <br><br><br><br>
+			Rellena solo los campos de los datos que quieras modificar:
+			<br><br>
+
+    		<label for="name"><b>Nuevo nombre</b></label>
+    		<input type="text" placeholder="Nombre" name="name" id="name" required>
+
+    		<label for="surname"><b>Nuevos apellidos</b></label>
+    		<input type="text" placeholder="Apellidos" name="surname" id="surname" required>
+
+  			<label for="pass"><b>Nueva contraseña</b></label>
+    		<input type="password" placeholder="Contraseña" name="pass" id="pass" required>
+
+    		 <label for="pass2"><b>Repita la nueva contraseña</b></label>
+    		<input type="password" placeholder="Contraseña" name="pass2" id="pass2" required>
+
+    		<label for="Email"><b>Nuevo correo electrónico</b></label>
+    		<input type="email" placeholder="Correo electrónico" name="Email" id="Email" required>
+
+			<label for="mail"><b>Nuevo correo postal</b></label>
+    		<input type="text" placeholder="Correo postal" name="correopostal" id="correopostal" required>
+
+			<button type="submit">Enviar</button>
+			<br><a href="/bienvenido.php">Volver</a>
+
+		</form>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+body{
+  margin-top: 3%;
+  margin-left: 3%;
+  background-image: url("../images/Logo_USAL_Color_2012.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+
+
+.formularioMod{
+  background: rgba(261,262,263,0.0);
+  width: 25%;
+  margin: 0% 37.5% 0% 37.5%;
+  margin-left: 0%;
+  padding: 1%;
+}
+
+a.button {
+  text-decoration: none;
+  background-color: #a80038;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 2% 8px 2%;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+
+}
+
+a.button:hover {
+    opacity: 0.8;
+}
+
+
+.container {
+  padding: 16px;
+}
+
+div{
+  margin: 50;
+}
+
