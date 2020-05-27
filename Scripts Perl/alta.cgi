@@ -5,6 +5,7 @@ use warnings;
 use CGI;
 use Email::Send::SMTP::Gmail;
 use Linux::usermod;
+use Quota;
 
 my $q = CGI->new;
 
@@ -33,6 +34,10 @@ $home="/home/".$user;
 $shell="/bin/bash";
 #$shell="/bin/false";
 
+
+
+
+
 #Envio de correo desde adadrolu a hugo1603
 my ($mail,$error)=Email::Send::SMTP::Gmail->new( -smtp=>'smtp.gmail.com',-login=>'AdAdRoLu@gmail.com',-pass=>'Admin1212');
 
@@ -41,6 +46,10 @@ print "session error: $error" unless ($mail!=-1);
 $mail->send(-to=>'hugo1603@usal.es', -subject=>'Intento de conexion', -body=>'Just testing it');
  
 $mail->bye;
+
+
+
+
 
 #Creamos el directorio para el usuario
 mkdir $home;
@@ -59,3 +68,11 @@ print ("El usuario $user hace login con la contrasena $pass");
 
 
 #Dar permisos de ejecución: chmod u+x alta.cgi
+
+
+
+my $dev=Quota::getqcarg();
+my $tammax=80000;
+
+Quota::setqlim($dev,$uiduser,$tammax,$tammax,0,0);
+Quota::sync($dev);
