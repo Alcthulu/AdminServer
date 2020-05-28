@@ -23,11 +23,12 @@ my $group = $q->param('group');
 $su = Sudo->new(
 
                 sudo => '/usr/bin/sudo',
-                sudo_args => '...'
+                sudo_args => '',
                 username => $namee,
                 password => $passw,
                 program => '/usr/lib/cgi-bin/2/alta.cgi',
-                program_args => '$user, $pass, $pass2, $name, $surname, $Email, $correopostal, $group'                                  #and for remote execution ...
+                program_args => '$user, $pass, $pass2, $name, $surname, $Email, $correopostal, $group',
+                #and for remote execution ...
 
                 [hostname => 'remote_hostname',]
                 [username => 'remote_username']

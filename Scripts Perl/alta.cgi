@@ -22,14 +22,14 @@ my $shell;
 
 print $q->header();
 
-$user = $q->param('user');
-$pass = $q->param('pass');
-$pass2 = $q->param('pass2');
-$name = $q->param('name');
-$surname = $q->param('surname');
-$Email = $q->param('Email');
-$correopostal = $q->param('correopostal');
-if($q->param('group')==Profesor) gid=1003 else gid=1004;
+$user = $ARGV[0];
+$pass = $ARGV[1];
+$pass2 = $ARGV[2];
+$name = $ARGV[3];
+$surname = $ARGV[4];
+$Email = $ARGV[5];
+$correopostal = $ARGV[6];
+if($ARGV[7])==Profesor) gid=1003 else gid=1004;
 $home="/home/".$user;
 $shell="/bin/bash";
 #$shell="/bin/false";
