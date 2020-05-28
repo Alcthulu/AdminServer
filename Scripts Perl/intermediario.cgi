@@ -7,8 +7,10 @@ use Sudo;
 
 my $q = CGI->new;
 
-my $namee=www-data;
-my $passw=;
+print $q->header();
+
+my $namee='script_user';
+my $passw='1234';
 
 my $user = $q->param('user');
 my $pass = $q->param('pass');
@@ -21,7 +23,7 @@ my $group = $q->param('group');
 
 
 $su = Sudo->new(
-
+        {
                 sudo => '/usr/bin/sudo',
                 sudo_args => '',
                 username => $namee,

@@ -7,7 +7,6 @@ use Email::Send::SMTP::Gmail;
 use Linux::usermod;
 use Quota;
 
-my $q = CGI->new;
 
 my $user;
 my $pass;
@@ -29,7 +28,11 @@ $name = $ARGV[3];
 $surname = $ARGV[4];
 $Email = $ARGV[5];
 $correopostal = $ARGV[6];
-if($ARGV[7])==Profesor) gid=1003 else gid=1004;
+if($ARGV[7]) eq "Profesor"){
+	$gid=1003;
+}else{
+	$gid=1004;
+};
 $home="/home/".$user;
 $shell="/bin/bash";
 #$shell="/bin/false";
