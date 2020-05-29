@@ -37,21 +37,7 @@ $home="/home/".$user;
 $shell="/bin/bash";
 #$shell="/bin/false";
 
-
-
-
-
-#Envio de correo desde adadrolu a hugo1603
-my ($mail,$error)=Email::Send::SMTP::Gmail->new( -smtp=>'smtp.gmail.com',-login=>'AdAdRoLu@gmail.com',-pass=>'Admin1212');
-
-print "session error: $error" unless ($mail!=-1);
- 
-$mail->send(-to=>'hugo1603@usal.es', -subject=>'Intento de conexion', -body=>'Just testing it');
- 
-$mail->bye;
-
-
-
+my $conexion = DBI->connect("DBI:mysql:database=soirausu;host=localhost","root","Admin12",{'RaiseError' => 1});
 
 
 #Creamos el directorio para el usuario
