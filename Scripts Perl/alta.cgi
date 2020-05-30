@@ -11,8 +11,6 @@ my $q = CGI->new;
 
 print $q->header();
 
-my $namee='script_user';
-my $passw='1234';
 
 my $user = $q->param('user');
 my $pass = $q->param('pass');
@@ -22,14 +20,13 @@ my $surname = $q->param('surname');
 my $Email = $q->param('Email');
 my $correopostal = $q->param('correopostal');
 my $group;
-if(q->param('group')) eq "Profesor"){
+if($q->param('group') eq "Profesor"){
         $group=1003;
 }else{
         $group=1004;
 };
 my $flag = 0;
-my &confirmado = 0;
-my $fechaAlta = timeLocal
+my $confirmado = 0;
 
 if($pass ne $pass2)
 {
@@ -38,7 +35,7 @@ if($pass ne $pass2)
 }
 
 
-my $conexion = DBI->connect("DBI:mysql:database=soirausu;host=localhost","root","Admin12",{'RaiseError' => 1});
+my $conexion = DBI->connect("DBI:mysql:database=soirausu;host=localhost","phpmyadmin","Admin12",{'RaiseError' => 1});
 if($conexion == 1)
 {
         $flag=1;
@@ -92,7 +89,7 @@ if($flag == 0) {
          
         $mail->bye;
 
-        $conexion->do("INSERT INTO users VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",undef,$user,$pass,$name,$surname,$Email,$correopostal,$group,$confirmado,$token,$fechaAlta);
+        $conexion->do("INSERT INTO personitas VALUES (?,?,?,?,?,?,?,?,?)",undef,$user,$pass,$name,$surname,$Email,$correopostal,$group,$confirmado,$token);
 
         print qq[<html><head><p>Se le ha enviado un enlace de confirmación a su correo electrónico, trás verificar su identidad en dicho enlace podrá acceder a su moodle <a href="https://142.93.43.11/login.html">aqui</a>.</p></head></html>];
 
@@ -100,32 +97,3 @@ if($flag == 0) {
 $conexion->disconnect();
 
 
-
-
-$su = Sudo->new(
-        {
-                sudo => '/usr/bin/sudo',
-                sudo_args => '',
-                username => $namee,
-                password => $passw,
-                program => '/usr/lib/cgi-bin/2/alta.cgi',
-                program_args => '$user, $pass, $pass2, $name, $surname, $Email, $correopostal, $group',
-                #and for remote execution ...
-
-                [hostname => 'remote_hostname',]
-                [username => 'remote_username']
-
-        }
-);
-
-$result = $su->sudo_run();
-if(exists($result->{error}))
-{
-        &handle_error($result);
-}
-else
-{
-        printf "STDOUT: %s\n",$result->{stdout};
-        printf "STDERR: %s\n",$result->{stderr};
-        printf "return: %s\n",$result->{rc};
-}

@@ -4,11 +4,11 @@ use warnings;
 
 use CGI;
 use Linux::usermod;
+use Quota;
 
 
 
 my $user = $ARGV[0];
-printf "%s",$user;
 my $pass = $ARGV[1];
 my $group = $ARGV[2];
 my $home="/home/".$user;
