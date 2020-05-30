@@ -61,7 +61,7 @@ if($clave eq $token){
 		{ 
 		    &handle_error($result); 
 		}
-		$enpass = md5_base64($pass);
+		my $enpass = md5_base64($pass);
 		$conexion->do("UPDATE personitas SET pass='$enpass' where user='$username'");
 	}else{
 		print qq[<html><head><p>Las contrasñas no coinciden,<a href="https://142.93.43.11/recuperarCon.html">vuelva</a> a intentarlo.</p></head></html>];
