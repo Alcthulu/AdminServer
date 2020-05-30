@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Recuperar Contraseña</title>
+  <link rel="stylesheet" href="css/LoginPageStyle.css">
+</head>
+  <body>
+    <a href="/login.html" id="cancel">Cancelar</a>
+    <form class="fromularioLogin" action="/cgi-bin/correoRecuperacion.cgi" method="POST">
+      <label for="Email"><b>Correo electronico</b></label>
+      <input type="email" placeholder="Correo Electronico" name="Email" id="Email" required>
+
+      <button type="submit">Aceptar</button>
+    </form>
+  </body>
+</html>
