@@ -8,9 +8,12 @@ use Linux::usermod;
 
 
 my $user = $ARGV[0];
+printf "%s",$user;
 my $pass = $ARGV[1];
 my $group = $ARGV[2];
 my $home="/home/".$user;
 my $shell="/bin/bash";
 
 Linux::usermod->add($user, $pass, '', $group, '', $home, $shell);
+
+mkdir $home;

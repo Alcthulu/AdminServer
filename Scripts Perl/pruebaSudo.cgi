@@ -1,27 +1,36 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
+
 use strict;
 use warnings;
 
 use CGI;
 use Sudo;
+
+my $q = CGI->new;
+
+print $q->header();
+
 my $su;
 
-my $name='script_user';
-my $pass='1234';
+my $name='root';
+my $pass='Admin12';
+my $result='';
+my $username=$q->param('user');
+my $password=$q->param('pass');
+my $params="$username $password 1003";
 
- 
 $su = Sudo->new(
                 {
                  sudo         => '/usr/bin/sudo',
                  sudo_args    => '',                                  
-                 username     => $name, 
+                 username     => $name,
                  password     => $pass,
                  program      => '/usr/lib/cgi-bin/2/pruebaAddUser.pl',
-                 program_args => 'pepe, pepe12, 1003',
+                 program_args => $params,
                 # and for remote execution ...
  
-                [hostname     => 'remote_hostname',]
-                [username     => 'remote_username']
+#                [hostname     => 'remote_hostname',]
+#                [username     => 'remote_username']
  
                 }
                );
@@ -33,7 +42,4 @@ if (exists($result->{error}))
    }
   else
    {
-     printf "STDOUT: %s\n",$result->{stdout};
-     printf "STDERR: %s\n",$result->{stderr};
-     printf "return: %s\n",$result->{rc};
    }
