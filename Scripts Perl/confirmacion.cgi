@@ -57,7 +57,7 @@ if ($conf == 1){
                    sudo_args    => '',                                  
                    username     => $name,
                    password     => $pass,
-                   program      => '/usr/lib/cgi-bin/2/pruebaAddUser.pl',
+                   program      => '/usr/lib/cgi-bin/2/addUser.pl',
                    program_args => $params,
                   # and for remote execution ...
    
