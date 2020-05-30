@@ -52,6 +52,8 @@ if(scalar @usuarios > 0)
 	$mail->send(-to=>'hugo1603@usal.es', -subject=>'Correo de recuperacion de contraseña', -body=> $mailbody);
 	$mail->bye;
 
+}else{
+	print qq[<html><head><p>El correo no existe en nuestra base de datos, <a href="https://142.93.43.11/login.html">vuelva</a> a intentarlo.</p></head></html>];
 }
 
 
