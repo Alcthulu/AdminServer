@@ -7,20 +7,16 @@ use DBI;
 use CGI;
 use Digest::MD5 qw(md5_base64);
 use Sudo;
-use Switch;
+
 
 my $q = CGI->new;
 
 print $q->header();
 
 my $username=$q->param('user');
-my $contrasena=$q->param('contrasena');
 my $pass=$q->param('pass');
 my $pass2=$q->param('pass2');
-my $name=$q->param('name');
-my $surname=$q->param('surname');
-my $email=$q->param('Email');
-my $correopostal=$q->param('correopostal');
+my $clave=$q->param('token');
 
 my $conexion = DBI->connect("DBI:mysql:database=soirausu;host=localhost","phpmyadmin","Admin12",{'RaiseError' => 1});
 my $consul = "SELECT *FROM personitas where user='$username'";
@@ -29,21 +25,17 @@ $consulta->execute();
 
 my $datos;
 my @data;
-my $password;
+my $token;
 
 while($datos = $consulta->fetchrow_arrayref())
 {
   push @data, @$datos;
   
-  $password= $data[1];
+  $token= $data[8];
 }
 
-my $enpass = md5_base64($contrasena);
-
-if ($enpass eq $password) {
-
-	if(($pass ne "!no") && ($pass2 ne "!no") && ($pass eq $pass2))
-		{
+if($clave eq $token){
+	if($pass eq $pass2){
 		my $su;
 		my $namer='root';
 		my $passr='Admin12';
@@ -71,54 +63,12 @@ if ($enpass eq $password) {
 		}
 		$enpass = md5_base64($pass);
 		$conexion->do("UPDATE personitas SET pass='$enpass' where user='$username'");
-
-		if($name ne "!no")
-		{
-			$conexion->do("UPDATE personitas SET name='$name' where user='$username'");
-
-		}
-
-		if($surname ne "!no")
-		{
-			$conexion->do("UPDATE personitas SET surname='$surname' where user='$username'");
-
-		}
-
-		if($email ne "!no")
-		{
-			$conexion->do("UPDATE personitas SET email='$email' where user='$username'");
-		}
-		
-		if($correopostal ne "!no")
-		{
-			$conexion->do("UPDATE personitas SET correopostal='$correopostal' where user='$username'");
-		}
-
+	}else{
+		print qq[<html><head><p>Las contrasñas no coinciden,<a href="https://142.93.43.11/recuperarCon.html">vuelva</a> a intentarlo.</p></head></html>];
 
 	}
-	else {
-		if($name ne "!no")
-		{
-			$conexion->do("UPDATE personitas SET name='$name' where user='$username'");
-
-		}
-
-		if($surname ne "!no")
-		{
-			$conexion->do("UPDATE personitas SET surname='$surname' where user='$username'");
-
-		}
-
-		if($email ne "!no")
-		{
-			$conexion->do("UPDATE personitas SET email='$email' where user='$username'");
-		}
-		
-		if($correopostal ne "!no")
-		{
-			$conexion->do("UPDATE personitas SET correopostal='$correopostal' where user='$username'");
-		}
-	}
+}else{
+	print qq[<html><head><p>Clave incorrecta, <a href="https://142.93.43.11/recuperarCon.html">vuelva</a> a intentarlo.</p></head></html>];
 }
 
 $consulta->finish();
