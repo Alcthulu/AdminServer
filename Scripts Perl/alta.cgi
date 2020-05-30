@@ -79,7 +79,7 @@ if(scalar @usuarios > 0)
 if($flag == 0) {
 
         my $token = 1000000 + int(rand(9999999));
-        my $mailbody = "Pulsa este enlace para confirmar https::/142.93.43.11/confirmacion.cgi?user=$user&token=$token";
+        my $mailbody = "Pulsa este enlace para confirmar https::/142.93.43.11/cgi-bin/confirmacion.cgi?user=$user&token=$token";
 
         my ($mail,$error)=Email::Send::SMTP::Gmail->new( -smtp=>'smtp.gmail.com',-login=>'AdAdRoLu@gmail.com',-pass=>'Admin1212');
 
