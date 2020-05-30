@@ -36,11 +36,13 @@ while( $datos = $consulta->fetchrow_arrayref())
 }
 $consulta->finish();
 
+
+my $token = 1000000 + int(rand(9999999));
 if(scalar @usuarios > 0)
 {
 	$conexion->do("UPDATE personitas SET token='$token' where email='$Email'");        
 
-	my $token = 1000000 + int(rand(9999999));
+
 	my $mailbody = "Tu usuario es $username. Pulsa este enlace y recuerde esta clave $token para recuperar su contraseña https::/142.93.43.11/recuperarCon.html";
 
 	my ($mail,$error)=Email::Send::SMTP::Gmail->new( -smtp=>'smtp.gmail.com',-login=>'AdAdRoLu@gmail.com',-pass=>'Admin1212');
