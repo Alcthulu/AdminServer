@@ -5,7 +5,7 @@ use warnings;
 
 use DBI;
 use CGI;
-use Digest::MD5;
+use Digest::MD5 qw(md5_base64);
 use Sudo;
 use Switch;
 

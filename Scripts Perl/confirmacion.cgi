@@ -6,7 +6,7 @@ use warnings;
 use CGI;
 use Sudo;
 use DBI;
-use Digest::MD5;
+use Digest::MD5 qw(md5_base64);
 
 my $q = CGI->new;
 

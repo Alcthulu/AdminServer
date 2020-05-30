@@ -6,7 +6,7 @@ use warnings;
 use Linux::usermod;
 use File::Path;
 
-my $username;
+my $username=$ARGV[0];
 
 my $user = Linux::usermod->del($username);
 
