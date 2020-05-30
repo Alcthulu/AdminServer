@@ -2,10 +2,11 @@
 use strict;
 use warnings;
 
-use Passwd::Unix;
+use Unix::Passwd:File;
 
 my $user = $ARGV[0];
 my $pass = $ARGV[1];
 
-my $pw = Passwd::Unix->new();
-$pw->passwd($user, $pw->encpass($pass));
+my $res = list_users();
+
+$res = modify_user(user=>"$user", pass=>"$pass");
