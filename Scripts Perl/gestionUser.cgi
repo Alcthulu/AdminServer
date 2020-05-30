@@ -5,10 +5,17 @@ use warnings;
 
 use DBI;
 use CGI;
+use Digest::MD5;
+use Sudo;
+use Switch;
 
-my $username;
-my $idAccion;
-my $contrasena;
+my $q = CGI->new;
+
+print $q->header();
+
+my $username=$q->param('user');;
+my $idAccion=$q->param('id');;
+my $contrasena=$q->param('pass');;
 
 
 
@@ -31,8 +38,7 @@ switch ($idAccion) {
 		  $password= $data[1];
 		}
 
-		my $encrypt = Digest::MD5->new;
-        my $enpass = $encrypt->md5_base64($contrasena);
+        my $enpass = md5_base64($contrasena);
 
         if ($enpass eq $password) {
         	$conexion->do("DELETE FROM personitas WHERE user='$username'");
@@ -68,7 +74,10 @@ switch ($idAccion) {
 			}
         }
         else {
-
+        	  print qq[<html><head><p>Su cuenta ya ha sido activada, siga el siguiente <a href="https://142.93.43.11/login.html">enlace</a> para iniciar secion.</p></head></html>];
+        	  print $enpass;
+        	  print "\n";
+        	  print $password;
         }
 
 

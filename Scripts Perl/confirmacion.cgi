@@ -79,9 +79,8 @@ if ($conf == 1){
 
         print qq[<html><head><p>Se ha dado de alta correctamente, para acceder a su cuenta pulse  <a href="https://142.93.43.11/login.html">aqui</a>.</p></head></html>];
         
-        my $encrypt = Digest::MD5->new;
 
-        my $enpass = $encrypt->md5_base64($password);
+        my $enpass = md5_base64($password);
 
         my $conexion= DBI->connect("DBI:mysql:database=soirausu;host=localhost","phpmyadmin","Admin12",{'RaiseError' => 1});
         my $consulta = $conexion->prepare("UPDATE personitas SET confirmado=1 WHERE user='$username'");
