@@ -8,7 +8,7 @@ use Tie::File;
 
 
 
-my $user = ARGV[0];
+my $user = $ARGV[0];
 my $ruta = "/var/html/wp".$user;
 
 mkdir $ruta;
@@ -24,7 +24,7 @@ my @contenido;
 
 tie @contenido, 'Tie::File', $archivo or die "No se logró hacer el tie: $!";
 
-my $newline = "$table_prefix = 'wp_".$user."';";
+my $newline = "\$table_prefix = 'wp_".$user."';";
 
 $contenido[65] = $newline;
 
