@@ -91,7 +91,7 @@ if($flag == 0) {
 
         $conexion->do("INSERT INTO personitas VALUES (?,?,?,?,?,?,?,?,?)",undef,$user,$pass,$name,$surname,$Email,$correopostal,$group,$confirmado,$token);
 
-        print qq[<html><head><p>Se le ha enviado un enlace de confirmación a su correo electrónico, trás verificar su identidad en dicho enlace podrá acceder a su moodle <a href="https://142.93.43.11/login.html">aqui</a>.</p></head></html>];
+        print qq[<html><head><p>Se le ha enviado un enlace de confirmación a su correo electrónico, trás verificar su identidad en dicho enlace podrá acceder a su moodle <a href="https://142.93.43.11/login.php">aqui</a>.</p></head></html>];
 
 }
 $conexion->disconnect();

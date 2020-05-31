@@ -119,7 +119,14 @@ if ($enpass eq $password) {
 			$conexion->do("UPDATE personitas SET correopostal='$correopostal' where user='$username'");
 		}
 	}
+
+	print "DATOS CORRECTOS";
+	print "<meta http-equiv='refresh' content='3; ../bienvenido.php'>";
+}else{
+	print "DATOS INCORRECTOS";
+	print "<meta http-equiv='refresh' content='3; ../modificarDatos.php'>";
 }
 
 $consulta->finish();
 $conexion->disconnect();
+

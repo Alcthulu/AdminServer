@@ -4,20 +4,16 @@
 		<meta charset="UTF-8">
 		<title>Bienvenido</title>
 		<link rel="stylesheet" href="css/SignUpStyle.css">
-		<meta url=https://142.93.43.11/signup.html>
-		<meta url=https://142.93.43.11/baja.html>
-		<meta url=https://142.93.43.11/modificar.html>
-		<meta url=https://142.93.43.11/login.html>
-
 	</head>
 
 		<div class="topBar">
 		    <header id="logo">
 		        AdRoLu/moodle
 		    </header>
-		    <a href="Home.php" class="headNav">Página principal</a>
-		    <a href="Genres.php" class="headNav">Modificar perfil</a>
-		    <a href="Platforms.php" class="headNav">Blog personal</a>"
+		    <a href="Bienvenido.php" class="headNav">Página principal</a>
+		    <a href="modificar.php" class="headNav">Modificar perfil</a>
+		    <a href="" class="headNav">Blog personal</a>"
+		    <a href="roundcube" class="headNav">Correo electrónico</a>
 		    <?php
 		      	session_start();
 		        if(isset($_SESSION["LoggedIn"]) && $_SESSION["LoggedIn"] == true){
