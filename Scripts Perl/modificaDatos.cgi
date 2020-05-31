@@ -42,7 +42,7 @@ my $enpass = md5_base64($contrasena);
 
 if ($enpass eq $password) {
 
-	if(($pass ne "!no") && ($pass2 ne "!no") && ($pass eq $pass2))
+	if(($pass ne undef) && ($pass2 ne undef) && ($pass eq $pass2))
 		{
 		my $su;
 		my $namer='root';
@@ -72,24 +72,24 @@ if ($enpass eq $password) {
 		$enpass = md5_base64($pass);
 		$conexion->do("UPDATE personitas SET pass='$enpass' where user='$username'");
 
-		if($name ne "!no")
+		if($name ne undef)
 		{
 			$conexion->do("UPDATE personitas SET name='$name' where user='$username'");
 
 		}
 
-		if($surname ne "!no")
+		if($surname ne undef)
 		{
 			$conexion->do("UPDATE personitas SET surname='$surname' where user='$username'");
 
 		}
 
-		if($email ne "!no")
+		if($email ne undef)
 		{
 			$conexion->do("UPDATE personitas SET email='$email' where user='$username'");
 		}
 		
-		if($correopostal ne "!no")
+		if($correopostal ne undef)
 		{
 			$conexion->do("UPDATE personitas SET correopostal='$correopostal' where user='$username'");
 		}
@@ -97,24 +97,24 @@ if ($enpass eq $password) {
 
 	}
 	else {
-		if($name ne "!no")
+		if($name ne undef)
 		{
 			$conexion->do("UPDATE personitas SET name='$name' where user='$username'");
 
 		}
 
-		if($surname ne "!no")
+		if($surname ne undef)
 		{
 			$conexion->do("UPDATE personitas SET surname='$surname' where user='$username'");
 
 		}
 
-		if($email ne "!no")
+		if($email ne undef)
 		{
 			$conexion->do("UPDATE personitas SET email='$email' where user='$username'");
 		}
 		
-		if($correopostal ne "!no")
+		if($correopostal ne undef)
 		{
 			$conexion->do("UPDATE personitas SET correopostal='$correopostal' where user='$username'");
 		}
