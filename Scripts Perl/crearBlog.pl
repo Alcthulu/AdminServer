@@ -3,14 +3,12 @@
 use strict;
 use warnings;
 
-use CGI;
 use File::Copy::Recursive qw(dircopy);
-
-my $q = CGI->new;
-print $q->header();
+use Tie::File;
 
 
-my $user = $q->param('user');
+
+my $user = ARGV[0];
 my $ruta = "/var/html/wp".$user;
 
 mkdir $ruta;
@@ -19,3 +17,18 @@ my $origen = "/var/configuracion/wordpress";
 my $destino = "/var/www/html/wp".$user;
 
 dircopy($origen, $destino);
+
+my $archivo = $destino."/wp-config.php";
+
+my @contenido;
+
+tie @contenido, 'Tie::File', $archivo or die "No se logró hacer el tie: $!";
+
+my $newline = "$table_prefix = 'wp_".$user."';";
+
+$contenido[65] = $newline;
+
+untie @contenido;
+
+
+
