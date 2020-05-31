@@ -37,4 +37,4 @@ if (exists($result->{error}))
 }
 
 
-print "<meta http-equiv='refresh' content='0; ../bienvenido.php'>";
+print "<meta http-equiv='refresh' content='0; ../wp".$user."'>";
