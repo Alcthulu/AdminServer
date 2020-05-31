@@ -11,11 +11,13 @@
 		    <a>AdRoLu/moodle</a>
 		    <a href="https://142.93.43.11/bienvenido.php" class="headNav">Página principal</a>
 		    <a href="https://142.93.43.11/modificar.php" class="headNav">Modificar perfil</a>
-		    <a href="" class="headNav">Blog personal</a>
-		    <a href="https://142.93.43.11/roundcube" class="headNav">Correo electrónico</a>
+		   
 		    <?php
 		      	session_start();
-		        if(isset($_SESSION["LoggedIn"]) && $_SESSION["LoggedIn"] == true){
+		        if(isset($_SESSION["LoggedIn"]) && $_SESSION["LoggedIn"] == true){ 
+		          echo "
+		      		<a href='wp".$_SESSION["User"]."' class='headNav'>Blog personal</a>
+		    		<a href='https://142.93.43.11/roundcube' class='headNav'>Correo electrónico</a>";
 		          echo "<a href=\"https://142.93.43.11/LogOut.php\" id=\"LogoutButton\">Logout</a>";
 		        }else{
 		          echo "<a href=\"https://142.93.43.11/login.php\" id=\"LoginButton\">Login</a>";
