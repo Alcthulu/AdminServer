@@ -34,9 +34,6 @@ while($datos = $consulta->fetchrow_arrayref())
 
 my $enpass = md5_base64($contrasena);
 
-print $enpass;
-print "*************";
-print $password;
 if ($enpass eq $password) {
 	$conexion->do("DELETE FROM personitas WHERE user='$username'");
 
@@ -74,5 +71,5 @@ if ($enpass eq $password) {
 	$consulta->finish();
 	$conexion->disconnect();
 }else {
-	  print qq[<html><head><p>Contraseña incorrecta, <a href="https://142.93.43.11/modificar.html">vuelva</a> a intentarlo.</p></head></html>];
+	  print qq[<html><head><p>Contraseña incorrecta, <a href="https://142.93.43.11/modificar.php">vuelva</a> a intentarlo.</p></head></html>];
 };

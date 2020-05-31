@@ -42,7 +42,7 @@ while($datos = $consulta->fetchrow_arrayref())
 
 if ($conf == 1){
   
-  print qq[<html><head><p>Su cuenta ya ha sido activada, siga el siguiente <a href="https://142.93.43.11/login.html">enlace</a> para iniciar secion.</p></head></html>];
+  print qq[<html><head><p>Su cuenta ya ha sido activada, siga el siguiente <a href="https://142.93.43.11/login.php">enlace</a> para iniciar secion.</p></head></html>];
 
 }else{
   my $su;
@@ -77,7 +77,7 @@ if ($conf == 1){
     else
      {  
 
-        print qq[<html><head><p>Se ha dado de alta correctamente, para acceder a su cuenta pulse  <a href="https://142.93.43.11/login.html">aqui</a>.</p></head></html>];
+        print qq[<html><head><p>Se ha dado de alta correctamente, para acceder a su cuenta pulse  <a href="https://142.93.43.11/login.php">aqui</a>.</p></head></html>];
         
 
         my $enpass = md5_base64($password);
