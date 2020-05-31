@@ -24,7 +24,7 @@
 				<ul>
 
 				<div><a href='modificarDatos.php' class='button'>Modificar Datos de usuario</a></div>
-				<div><a href='crearBlog.cgi?user=".$_SESSION["User"]."' class='button'>-----Crear web personal-----</a></div>
+				<div><a href='/cgi-bin/crearBlog.cgi?user=".$_SESSION["User"]."' class='button'>-----Crear web personal-----</a></div>
 				<div><a href='' class='button'>---Eliminar web personal---</a></div>
 				<div><a href='baja.php' class='button'>-------Eliminar cuenta-------</a></div>
 				</ul>
