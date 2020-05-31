@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE php>
 <html>
 	<head>
 		<meta charset="UTF-8">		
@@ -6,6 +6,29 @@
 		<link rel="stylesheet" href="css/ModDatStyle.css">		
 	</head>
 	<body>
+	<html>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>      
+    <div class="topBar">
+      <header id="logo">
+        AdRoLu/moodle
+      </header>
+      <a href="Home.php" class="headNav">Página principal</a>
+      <a href="Genres.php" class="headNav">Modificar perfil</a>
+      <a href="Platforms.php" class="headNav">Blog personal</a>
+      <?php
+        session_start();
+        if(isset($_SESSION["LoggedIn"]) && $_SESSION["LoggedIn"] == true){
+          echo "<a href=\"LogOut.php\" id=\"LogoutButton\">Logout</a>";
+        }else{
+          echo "<a href=\"LoginPage.php\" id=\"LoginButton\">Login</a>";
+        }
+      ?>
+    </div>
+	</html>
+	<div class="Display">
 		<form class="formularioModDat" action="/cgi-bin/gestionUser.cgi?user=alvaro&id=modifica" method="POST">
 
 		    <br><br><br><br>
@@ -31,6 +54,8 @@
     		<input type="text" placeholder="Correo postal" name="correopostal" id="correopostal" >
 
     		<p>--------------------------------------------------------------------</p>
+			<label for="user"><b>Nombre de usuario</b></label>
+    		<input type="text" placeholder="User" name="user" id="user" required>
 
     		<label for="contrasena"><b>Contraseña actual</b></label>
     		<input type="password" placeholder="Contraseña" name="contrasena" id="contrasena" required>
@@ -39,5 +64,6 @@
 			<br><a href="/modificar.html">Volver</a>
 
 		</form>
+	</div>
 	</body>
 </html>

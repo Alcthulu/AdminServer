@@ -16,7 +16,8 @@ print $q->header();
 my $username=$q->param('user');
 my $idAccion=$q->param('id');
 my $contrasena=$q->param('contrasena');
-
+print $username;
+print "***************";
 my $consul= "SELECT *FROM personitas where user='$username'";
 
 my $conexion = DBI->connect("DBI:mysql:database=soirausu;host=localhost","phpmyadmin","Admin12",{'RaiseError' => 1});

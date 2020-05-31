@@ -7,7 +7,7 @@
 </head>
   <body>
     <a href="" id="cancel">Cancelar</a>
-    <form class="fromularioLogin">
+    <form class="fromularioLogin" action="Verify.php" method="post">
       <label for="user"><b>Nombre de usuario</b></label>
       <input type="text" placeholder="Nombre de usuario" name="user" id="user" required>
 
