@@ -25,10 +25,10 @@
     session_start();
     $_SESSION["User"] = $Username;
     $_SESSION["LoggedIn"] = true;
-    header("location:modificarDatos.php");
+    header("location:https://142.93.43.11/bienvenido.php");
   }else{
     $_SESSION["LoggedIn"] = false;
-    header("location:login.php?error=login");
+    header("location:https://142.93.43.11/login.php?error=login");
   }
   mysqli_free_result($res);
   mysqli_close($mysqli);

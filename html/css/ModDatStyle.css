@@ -67,3 +67,22 @@ button:hover {
   margin-right: auto;
 }
 
+div.topBar{
+  margin-right: 56%;
+  padding: 4px;
+  border-color: black;
+  border-style: double;
+  background: white;
+  margin-top: 7px;
+}
+
+a{
+  padding: 4px;
+  background: #a80038;
+  margin-top: 0%;
+  margin-left: 0%;
+  text-decoration: none;
+  border-bottom: black;
+  color: white;
+}
+

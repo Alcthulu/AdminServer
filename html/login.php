@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="css/LoginPageStyle.css">
 </head>
   <body>
-    <a href="" id="cancel">Cancelar</a>
+    <a href="https://142.93.43.11/bienvenido.php" id="cancel">Cancelar</a>
     <form class="fromularioLogin" action="Verify.php" method="post">
       <label for="user"><b>Nombre de usuario</b></label>
       <input type="text" placeholder="Nombre de usuario" name="user" id="user" required>
@@ -15,8 +15,8 @@
       <input type="password" placeholder="Contraseña" name="pass" id="pass" required>
 
       <button type="submit">Aceptar</button>
-      <a href="signup.html" id="SignUpLink">¿No tienes cuenta?</a>
-      <a href="correoRecuperacion.html" id="RecuLink">¿No recuerdas tu contraseña?</a>
+      <a href="https://142.93.43.11/signup.html" id="SignUpLink">¿No tienes cuenta?</a>
+      <a href="https://142.93.43.11/correoRecuperacion.html" id="RecuLink">¿No recuerdas tu contraseña?</a>
     </form>
   </body>
 </html>

@@ -10,14 +10,13 @@
 		session_start();
         if(isset($_SESSION["LoggedIn"]) && $_SESSION["LoggedIn"] == true){
 			echo"
-			  <div class='topBar'>
-		      <header id='logo'>
-		        AdRoLu/moodle
-		      </header>
-		      <a href='Home.php' class='headNav'>Página principal</a>
-		      <a href='Genres.php' class='headNav'>Modificar perfil</a>
-		      <a href='Platforms.php' class='headNav'>Blog personal</a>
-		      <a href='LogOut.php' id='LogoutButton'>Cerrar sesion</a>
+			<div class='topBar'>
+		      <a>AdRoLu/moodle</a>
+		      <a href='https://142.93.43.11/bienvenido.php' class='headNav'>Página principal</a>
+		      <a href='https://142.93.43.11/modificar.php' class='headNav'>Modificar perfil</a>
+		      <a href='' class='headNav'>Blog personal</a>
+		      <a href='https://142.93.43.11/roundcube' class='headNav'>Correo electrónico</a>
+		      <a href='https://142.93.43.11/LogOut.php' id='LogoutButton'>Cerrar sesion</a>
 		   	</div>
 
 			<div class='Display'>
@@ -53,13 +52,13 @@
 		    		<input type='password' placeholder='Contraseña' name='contrasena' id='contrasena' required>
 
 					<button type='submit'>Enviar</button>
-					<br><a href='/modificar.html'>Volver</a>
+					<br><a href='https://142.93.43.11/modificar.html'>Volver</a>
 
 				</form>
 			</div>";
 		}
         else{
-          header("location:login.php");
+          header("location:https://142.93.43.11/login.php");
         }
     ?>
 	</body>
