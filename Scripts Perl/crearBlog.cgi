@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use CGI;
+use Sudo;
 
 my $q = CGI->new;
 print $q->header();
@@ -34,3 +35,6 @@ if (exists($result->{error}))
 { 
     &handle_error($result); 
 }
+
+
+print "<meta http-equiv='refresh' content='0; ../bienvenido.php'>";
