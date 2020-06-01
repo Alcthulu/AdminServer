@@ -25,6 +25,11 @@ $su = Sudo->new(
                  password     => $passr,
                  program      => '/usr/lib/cgi-bin/2/eliminarBlog.pl',
                  program_args => $params,
+                  # and for remote execution ...
+   
+  #                [hostname     => 'remote_hostname',]
+  #                [username     => 'remote_username']
+   
                 }
                );
     
@@ -34,7 +39,9 @@ $result = $su->sudo_run();
 if (exists($result->{error})) 
 { 
     &handle_error($result); 
+}else{
+    print "Blog eliminado";
+    print "<meta http-equiv='refresh' content='3; ../wp".$user."'>";
 }
 
-print "BLOG ELIMINADO";
-print "<meta http-equiv='refresh' content='3; ../bienvenido.php'>";
+

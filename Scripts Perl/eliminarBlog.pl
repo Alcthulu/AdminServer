@@ -5,7 +5,7 @@ use warnings;
 
 use File::Path;
 
-my $username=$ARGV[0];
+my $user=$ARGV[0];
 
 
 my $borrar = "/var/www/html/wp".$user;
