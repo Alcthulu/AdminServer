@@ -70,6 +70,17 @@ if ($enpass eq $password) {
 
 	$consulta->finish();
 	$conexion->disconnect();
+
+	my $todrop="wp_".$username."commentmeta,  wp_".$username."comments,  wp_".$username."links,  wp_".$username."options,  wp_".$username."postmeta,  wp_".$username."posts,  wp_".$username."termmeta,  wp_".$username."terms,  wp_".$username."term_relationships,  wp_".$username."term_taxonomy,  wp_".$username."usermeta,  wp_".$username."users";
+	my $dropCon="DROP TABLE IF EXISTS ".$todrop;
+
+	$conexion = DBI->connect("DBI:mysql:database=wordpressdb;host=localhost","phpmyadmin","Admin12",{'RaiseError' => 1});
+	$consulta = $conexion->prepare($dropCon);
+	$consulta->execute();
+
+	$consulta->finish();
+	$conexion->disconnect();
+	
 	print "Usuario eliminado";
     print "<meta http-equiv='refresh' content='3; https://142.93.43.11/LogOut.php'>";
 }else {
