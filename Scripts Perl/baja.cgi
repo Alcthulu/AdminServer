@@ -70,6 +70,8 @@ if ($enpass eq $password) {
 
 	$consulta->finish();
 	$conexion->disconnect();
+	print "Usuario eliminado";
+    print "<meta http-equiv='refresh' content='3; https://142.93.43.11/LogOut.php'>";
 }else {
 	  print qq[<html><head><p>Contraseña incorrecta, <a href="https://142.93.43.11/modificar.php">vuelva</a> a intentarlo.</p></head></html>];
 };
